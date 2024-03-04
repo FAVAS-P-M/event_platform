@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { CreateUserParams, UpdateUserParams } from "@/types"
 import { handleError } from "../utils"
-import { connectToDatabase } from "@/mongodb/database"
+import { connectToDatabase } from '@/mongodb/database'
 import User from "@/mongodb/database/models/user.model"
 import Event from '@/mongodb/database/models/event.model'
 import Order from '@/mongodb/database/models/order.model'
@@ -11,9 +11,12 @@ import Order from '@/mongodb/database/models/order.model'
 export async function createUser(user:CreateUserParams){
     try {
     await connectToDatabase();
-    const newUser=await User.create(user);   
+    const newUser=await User.create(user);  
+console.log(newUser,"new user....")
+
+
     return JSON.parse(JSON.stringify(newUser)); 
-    } catch (error) {
+} catch (error) {
         handleError(error)
     }
 }
