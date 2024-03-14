@@ -171,7 +171,7 @@ const router=useRouter()
             control={form.control}
             name="imageUrl"
             render={({ field }) => (
-              <FormItem className="w-full">
+              <FormItem className="w-full flex items-center justify-center">
               
                 <FormControl className="h-72">
                   <FileUploader onFieldChange={field.onChange}
@@ -193,8 +193,8 @@ const router=useRouter()
               <FormItem className="w-full">
               
                 <FormControl>
-                    <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-gray-50 px-5">
-                        <Image src='/assets/location-gray.svg' alt='calender' width={24} height={24}/>
+                    <div className="flex flex-center h-[54px] w-full overflow-hidden rounded-full bg-gray-50 justify-center items-center px-5">
+                        <Image src='/assets/location-grey.svg' alt='calender' width={24} height={24}/>
                         <Input placeholder="Event location or online" {...field} className="" />
 
                     </div>
@@ -206,7 +206,7 @@ const router=useRouter()
 
           </div>
 
-          <div className="flex flex-row h-[120px]  md:flex-row ">
+          <div className="flex flex-col h-[120px] gap-5  md:flex-row ">
           <FormField
             control={form.control}
             name="startDateTime"
@@ -214,7 +214,7 @@ const router=useRouter()
               <FormItem className="w-full">
               
                 <FormControl>
-                    <div className="flex  justify-between  w-full overflow-hidden rounded-full bg-gray-50 px-5">
+                    <div className="flex justify-between md:flex md:justify-between  w-full overflow-hidden rounded-full bg-gray-50 px-5">
                         <Image src='/assets/calendar.svg' alt='calender' width={24} height={24}/>
                         <p className="">Start Date</p>
                         <ReactDatePicker 
@@ -270,7 +270,7 @@ const router=useRouter()
               <FormItem className="w-full">
               
                 <FormControl>
-                    <div className="flex  justify-between  w-full overflow-hidden rounded-full bg-gray-50 px-5">
+                    <div className="flex  justify-between items-center  w-full overflow-hidden rounded-full bg-gray-50 px-5">
                         <Image src='/assets/dollar.svg' alt='dollar'
                          width={24} height={24}/>
                         <Input type="number" 
@@ -312,7 +312,7 @@ const router=useRouter()
               <FormItem className="w-full">
               
                 <FormControl>
-                    <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-gray-50 px-5">
+                    <div className="flex flex-center justify-center items-center h-[140px] w-full overflow-hidden rounded-full bg-gray-50 px-5">
                         <Image src='/assets/link.svg' alt='link' width={24} height={24}/>
                         <Input placeholder="URL" {...field} className="" />
 

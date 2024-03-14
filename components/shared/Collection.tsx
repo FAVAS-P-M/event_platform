@@ -1,4 +1,6 @@
+import { IEvent } from "@/mongodb/database/models/event.model";
 import Card from "./Card";
+import Pagination from "./Pagination";
 
 type CollectionProps={
     data:IEvent[],
@@ -40,7 +42,13 @@ hidePrice={hidePrice}
 })}
 </ul>
 
-{data[0].title}
+{totalPages>1 && (
+    <Pagination
+    urlParamName={urlParamName}
+    page={page}
+    totalPages={totalPages}
+    />
+)}
 
     </div>
  ):(

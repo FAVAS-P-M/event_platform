@@ -20,7 +20,7 @@ const EventDetails= async({params:{id},searchParams}:SearchParamProps) => {
  
     return (
       <>
-  <section className='fle justify-center bg-blue-50 bg-contain '>
+  <section className=' justify-center bg-blue-50 bg-contain '>
 <div className='grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl'>
 
 <Image src={event.imageUrl}
@@ -50,12 +50,13 @@ className='h-full min-h-[300px] object-cover object-center'
 </div>
 
 {/* checkout button */}
+<div className='flex px-10'>
 <CheckOutButton event={event}/>
-
-<div className='flex flex-col gap-5'>
+</div>
+<div className='flex flex-col gap-5 p-4'>
  <div className='flex gap-2 md:gap-3'>
   <Image 
-  src='/assets/icons/calendar.svg'
+  src='/assets/calendar.svg'
   alt='calendar'
   width={32}
   height={32}
@@ -74,7 +75,7 @@ className='h-full min-h-[300px] object-cover object-center'
 </div>   
 
 <div className='flex items-center gap-3'>
-<Image src='/assets/icons/location.svg'
+<Image src='/assets/location.svg'
 alt='location'
 width={32}
 height={32}
@@ -83,7 +84,7 @@ height={32}
 </div>
 </div>
 
-<div className='flex flex-col gap-2'>
+<div className='flex flex-col gap-2 px-10'>
 <p className='text-bold-20 text-gray-600'>What You Will Learn</p>
 <p>{event.description}</p>
 <p className='underline'>{event.url}</p>
@@ -95,15 +96,15 @@ height={32}
 
 {/* Events from the same category */}
   <section className='my-8 flex flex-col gap-8 md:gap-12 '>
-<h2 className=''>Related Events</h2>
+<h2 className='font-extrabold text-3xl text-gray-700 w-full flex justify-center items-center'>Related Events</h2>
 <Collection
 data={relatedEvents?.data}
 emptyTitle='No Events Found'
 emptyStateSubtext='Come back later'
 collectionType='All_Events'
-limit={6}
-page={1}
-totalPages={2}
+limit={3}
+page={searchParams.page as string}
+totalPages={relatedEvents?.totalPages}
 />
   </section>
 
